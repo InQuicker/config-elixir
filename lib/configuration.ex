@@ -33,10 +33,10 @@ defmodule Configuration do
   end
 
   def file_path do
-		Application.get_env(:configuration, :file_path)
+    Application.get_env(:configuration, :file_path)
   end
 
-	def vault do
+  def vault do
     Application.get_env(:configuration, :vault)
   end
 
