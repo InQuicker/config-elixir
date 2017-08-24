@@ -64,7 +64,7 @@ defmodule Configuration do
 
   defp cache_configuration({:FILE, {path, item}}, key, application) do
     case File.read("#{file_path()}/#{path}/#{item}") do
-      {:ok, file} -> put_env(application, key, String.rstrip(file))
+      {:ok, file} -> put_env(application, key, String.trim_trailing(file))
       _else -> nil
     end
   end
@@ -99,7 +99,7 @@ defmodule Configuration do
 
   defp cache_configuration({:FILE, {path, item}}, namespace, key, application) do
     case File.read("#{file_path()}/#{path}/#{item}") do
-      {:ok, file} -> put_env(application, namespace, key, String.rstrip(file))
+      {:ok, file} -> put_env(application, namespace, key, String.trim_trailing(file))
       _else -> nil
     end
   end
